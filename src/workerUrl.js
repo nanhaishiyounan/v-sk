@@ -142,7 +142,7 @@ const blobCode = function fn() {
 
     //     width: 100% !important;
     const base = `
-      content: '' !important;
+      content: '';
       display: inline-block !important;
       vertical-align: top !important;
   

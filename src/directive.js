@@ -80,7 +80,6 @@ export default {
       poolPostMessage({ id: el.dataset.skeletonId, name: 'skeletonImageStyle', payload: { value, elColor } })
     } else {
       const elLineHeight = measureLineHeight(el)
-      el.style.minHeight = unitify(elLineHeight, 'rem')
       poolPostMessage({ id: el.dataset.skeletonId, name: 'skeletonStyle', payload: { value, argRadio, argBias, elLineHeight, deep, elColor } })
     }
   },

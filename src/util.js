@@ -35,6 +35,9 @@ export function initAnimation() {
   window.__init_animation_done__ = true
   const styleEl = document.createElement('style')
   styleEl.innerHTML = `
+      [data-skeleton-id]:empty::after {
+        content: '\\feff' !important;
+      }
       @keyframes transparent {
         0% {
           opacity: 0.3;
