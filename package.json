@@ -1,0 +1,30 @@
+{
+  "name": "v-sk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+"type": "module",
+
+  "scripts": {
+    "build": "rollup --config",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanhaishiyounan/v-sk.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanhaishiyounan/v-sk/issues"
+  },
+  "homepage": "https://github.com/nanhaishiyounan/v-sk#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.8",
+    "@babel/preset-env": "^7.22.7",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "rollup": "^3.26.2"
+  }
+}
