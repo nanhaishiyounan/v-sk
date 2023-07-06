@@ -1,5 +1,5 @@
 import workerUrl from './workerUrl'
-import { initAnimation, measureLineHeight, unitify } from './util'
+import { initAnimation, measureLineHeight, unitify, getRandom, placeHolderImage } from './util'
 
 const pool = []
 const maxCount = 20

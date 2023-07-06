@@ -1,4 +1,4 @@
-const blobCode = function () {
+const blobCode = function fn() {
   onmessage = ({ data: { id, name, payload } }) => {
     if (name === 'skeletonStyle') {
       let { value, argRadio, argBias, elLineHeight, deep, elColor } = payload
@@ -229,6 +229,6 @@ const blobCode = function () {
   }
 }
 
-const blob = new Blob([`${blobCode}`], { type: 'text/javascript' })
+const blob = new Blob([`(${blobCode})()`], { type: 'text/javascript' })
 
 export default URL.createObjectURL(blob)
