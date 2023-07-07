@@ -9,7 +9,9 @@ export default {
       clearTimeout(tid)
       tid = setTimeout(refreshHtmlFontSize, 300)
     })
-
+    directive.bind = directive.beforeMount
+    directive.inserted = directive.mounted
+    directive.unbind = directive.unmounted
     app.directive('sk', directive)
   }
 }

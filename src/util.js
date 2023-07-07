@@ -23,9 +23,9 @@ export function measureLineHeight(el) {
       div.remove()
     }
 
-    return (dimension(elFontSize) * window.__normal_line_height__[elFontFamily]) / dimension(window.__html_font_size__) + 'px'
+    return (dimension(elFontSize) * window.__normal_line_height__[elFontFamily]) / dimension(window.__html_font_size__) + 'rem'
   }
-  return dimension(elLineHeight) / dimension(window.__html_font_size__) + 'px'
+  return dimension(elLineHeight) / dimension(window.__html_font_size__) + 'rem'
 }
 
 export function initAnimation() {

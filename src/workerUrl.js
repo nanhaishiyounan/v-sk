@@ -1,5 +1,8 @@
 const blobCode = function fn() {
+  let htmlFontSize = '16px'
   onmessage = ({ data: { id, name, payload } }) => {
+    htmlFontSize = payload.htmlFontSize
+
     if (name === 'skeletonStyle') {
       let { value, argRadio, argBias, elLineHeight, deep, elColor } = payload
 
@@ -163,6 +166,10 @@ const blobCode = function fn() {
   function unitify(num, u) {
     if (isUnit(num, u)) {
       return num
+    }
+
+    if (u === 'rem') {
+      return dimension(num) / dimension(htmlFontSize) + 'rem'
     }
 
     const reg = /\d*\.?\d+/

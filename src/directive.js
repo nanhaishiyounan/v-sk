@@ -81,10 +81,10 @@ export default {
     const tagName = el.tagName
 
     if (tagName === 'IMG') {
-      poolPostMessage({ id: el.dataset.skeletonId, name: 'skeletonImageStyle', payload: { value, elColor } })
+      poolPostMessage({ id: el.dataset.skeletonId, name: 'skeletonImageStyle', payload: { value, elColor, htmlFontSize: window.__html_font_size__ } })
     } else {
       const elLineHeight = measureLineHeight(el)
-      poolPostMessage({ id: el.dataset.skeletonId, name: 'skeletonStyle', payload: { value, argRadio, argBias, elLineHeight, deep, elColor } })
+      poolPostMessage({ id: el.dataset.skeletonId, name: 'skeletonStyle', payload: { value, argRadio, argBias, elLineHeight, deep, elColor, htmlFontSize: window.__html_font_size__ } })
     }
   },
 
