@@ -55,8 +55,10 @@ const poolPostMessage = msg => {
 initAnimation()
 
 export default {
-  beforeMount(el) {
+  beforeMount(el, binding) {
     el.dataset.skeletonId = getRandom(16)
+    let { value } = binding
+
     const tagName = el.tagName
     if (tagName === 'IMG') {
       const src = el.getAttribute('src')
