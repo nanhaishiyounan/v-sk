@@ -1,5 +1,5 @@
 import workerUrl from './workerUrl'
-import { initAnimation, measureLineHeight, unitify, getRandom, placeHolderImage } from './util'
+import { initAnimation, measureLineHeight, unitify, getRandom, placeHolderImage, initElHeight } from './util'
 
 const pool = []
 const maxCount = 20
@@ -64,6 +64,8 @@ export default {
         return
       }
       el.setAttribute('src', placeHolderImage)
+    } else {
+      initElHeight(el.dataset.skeletonId, value)
     }
   },
   mounted(el, binding) {
@@ -88,5 +90,6 @@ export default {
     el.__skeleton_done__ = true
     el.removeAttribute('data-skeleton-id')
     document.querySelector(`[data-style-skeleton-id="${el.dataset.skeletonId}"]`)?.remove()
+    document.querySelector(`[data-style-skeleton-height-id="${el.dataset.skeletonId}"]`)?.remove()
   }
 }

@@ -55,6 +55,26 @@ export function initAnimation() {
   document.getElementsByTagName('HEAD')[0].append(styleEl)
 }
 
+export function initElHeight(id, value) {
+  const styleEl = document.createElement('style')
+  styleEl.dataset.styleSkeletonHeightId = id
+  const totalLines = (value ?? ['1']).reduce((t, v) => {
+    t = v.startsWith('+') ? t : t + parseInt(v)
+    return t
+  }, 0)
+  let content = ''
+  for (let i = 0; i < totalLines; i++) {
+    content += '\\200B\\A'
+  }
+  styleEl.innerHTML = `
+      [data-skeleton-id="${id}"]:empty::after {
+        content: '${content}';
+        white-space: pre;
+      }
+  `
+  document.getElementsByTagName('HEAD')[0].append(styleEl)
+}
+
 export function dimension(dimension) {
   return parseFloat(dimension || 0)
 }
