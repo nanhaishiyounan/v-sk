@@ -56,7 +56,7 @@ initAnimation()
 
 export default {
   beforeMount(el, binding) {
-    el.dataset.skeletonId = getRandom(16)
+    el.dataset.skeletonId = getRandom(8)
     let { value } = binding
 
     const tagName = el.tagName

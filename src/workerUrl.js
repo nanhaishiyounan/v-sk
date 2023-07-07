@@ -156,27 +156,28 @@ const blobCode = function fn() {
     return `${scopeLimit} ${limitMaxHeight} ${cssBegin}${base}${background}${cssEnd}`
   }
 
-  function unitify(dimension, unit) {
-    if (isUnit(dimension, unit)) {
-      return dimension
-    }
-    const reg = /\d*\.?\d+/
-    return String(dimension).match(reg)[0] + unit
+  function dimension(num) {
+    return parseFloat(num || 0)
   }
 
-  function unit(dimension) {
+  function unitify(num, u) {
+    if (isUnit(num, u)) {
+      return num
+    }
+
+    const reg = /\d*\.?\d+/
+    return String(num).match(reg)[0] + u
+  }
+
+  function unit(num) {
     const reg = /[^\d.]+/
-    const result = String(dimension).match(reg)
+    const result = String(num).match(reg)
     return result ? result[0] : ''
   }
 
-  function dimension(dimension) {
-    return parseFloat(dimension || 0)
-  }
-
-  function isUnit(dimension, unit) {
-    const reg = new RegExp(`\\d*\\.?\\d+(${unit})$`)
-    return reg.test(dimension)
+  function isUnit(num, u) {
+    const reg = new RegExp(`\\d*\\.?\\d+(${u})$`)
+    return reg.test(num)
   }
 
   function formatLineValue(lineValueStr) {

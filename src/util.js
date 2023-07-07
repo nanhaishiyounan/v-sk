@@ -75,27 +75,40 @@ export function initElHeight(id, value) {
   document.getElementsByTagName('HEAD')[0].append(styleEl)
 }
 
-export function dimension(dimension) {
-  return parseFloat(dimension || 0)
-}
-
-export function unitify(dimension, unit) {
-  if (isUnit(dimension, unit)) {
-    return dimension
+let htmlEl = null
+export function refreshHtmlFontSize() {
+  if (!htmlEl) {
+    htmlEl = document.querySelector('html')
   }
-  const reg = /\d*\.?\d+/
-  return String(dimension).match(reg)[0] + unit
+  window.__html_font_size__ = getComputedStyle(htmlEl).fontSize
 }
 
-export function unit(dimension) {
+export function dimension(num) {
+  return parseFloat(num || 0)
+}
+
+export function unitify(num, u) {
+  if (isUnit(num, u)) {
+    return num
+  }
+
+  if (u === 'rem') {
+    return dimension(num) / dimension(window.__html_font_size__) + 'rem'
+  }
+
+  const reg = /\d*\.?\d+/
+  return String(num).match(reg)[0] + u
+}
+
+export function unit(num) {
   const reg = /[^\d.]+/
-  const result = String(dimension).match(reg)
+  const result = String(num).match(reg)
   return result ? result[0] : ''
 }
 
-export function isUnit(dimension, unit) {
-  const reg = new RegExp(`\\d*\\.?\\d+(${unit})$`)
-  return reg.test(dimension)
+export function isUnit(num, u) {
+  const reg = new RegExp(`\\d*\\.?\\d+(${u})$`)
+  return reg.test(num)
 }
 
 export const placeHolderImage = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
