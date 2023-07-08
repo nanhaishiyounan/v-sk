@@ -3,6 +3,7 @@
 基于 vue2、3 的骨架屏自动生成解决方案
 ![image.png](./sk1.png)
 ![image.png](./sk2.png)
+![image.gif](./sk3.gif)
 
 ## 安装
 
