@@ -60,7 +60,7 @@ v-sk = "['lines width height positionX radio:offset color']"
 
 | 字段      | 类型             | 默认值            | 缺省继承 | 说明                                                               |
 | --------- | ---------------- | ----------------- | -------- | ------------------------------------------------------------------ |
-| lines     | number           | 1                 | 无       | 行数                                                               |
+| lines     | number           | 1                 | 无       | 行数，+表示不换行                                                  |
 | width     | number(px rem %) | 100%              | -        | 宽度，默认单位 px,(最终会根据 html font-size 转换为 rem)           |
 | height    | number(px rem %) | 100%              | -        | 宽度，默认单位 px,(最终会根据 html font-size 转换为 rem)           |
 | positionX | number(px rem %) | 0                 | -        | 水平偏移，默认单位 px,负数表示从右边开始                           |
