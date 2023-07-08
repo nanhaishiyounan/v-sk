@@ -1,7 +1,7 @@
 {
   "name": "v-sk",
   "version": "1.0.19",
-  "description": "",
+  "description": "基于 vue2、3 的骨架屏自动生成解决方案",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
