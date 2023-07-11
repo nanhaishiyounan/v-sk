@@ -1,6 +1,9 @@
 # v-sk
 
 基于 vue2、3 的骨架屏自动生成解决方案
+
+[demo](https://codepen.io/nanhaishiyounan/pen/NWEaXWr)
+
 ![image.png](./sk1.png)
 ![image.png](./sk2.png)
 ![image.gif](./sk3.gif)
