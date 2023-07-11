@@ -35,9 +35,6 @@ export function initAnimation() {
   window.__init_animation_done__ = true
   const styleEl = document.createElement('style')
   styleEl.innerHTML = `
-      [data-skeleton-id]:empty::after {
-        content: '\\feff' !important;
-      }
       @keyframes transparent {
         0% {
           opacity: 0.3;
@@ -80,7 +77,7 @@ export function refreshHtmlFontSize() {
   if (!htmlEl) {
     htmlEl = document.querySelector('html')
   }
-  window.__html_font_size__ = getComputedStyle(htmlEl).fontSize
+  window.__html_font_size__ = htmlEl.style.fontSize || getComputedStyle(htmlEl).fontSize
 }
 
 export function dimension(num) {
