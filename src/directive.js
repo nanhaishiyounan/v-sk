@@ -4,18 +4,16 @@ import { initAnimation, measureLineHeight, unitify, getRandom, placeHolderImage,
 const pool = []
 const maxCount = 20
 let pointer = 0
+for (let i = 0; i < maxCount; i++) {
+  const worker = new SkWorker()
+  pool.push(worker)
+}
 const workPool = {
   getWorker: () => {
     if (pointer > maxCount - 1) {
       pointer = 0
     }
-    if (pool.length < maxCount) {
-      const worker = new Worker(workerUrl)
-      pool.push(worker)
-      return worker
-    } else {
-      return pool[pointer++]
-    }
+    return pool[pointer++]
   }
 }
 

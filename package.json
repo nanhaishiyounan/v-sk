@@ -1,6 +1,6 @@
 {
   "name": "v-sk",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "基于 vue2、3 的骨架屏自动生成解决方案",
   "keywords": [
     "vue",
