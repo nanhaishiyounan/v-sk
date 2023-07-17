@@ -5,7 +5,7 @@ const pool = []
 const maxCount = 20
 let pointer = 0
 for (let i = 0; i < maxCount; i++) {
-  const worker = new SkWorker()
+  const worker = new Worker(workerUrl)
   pool.push(worker)
 }
 const workPool = {

@@ -1,6 +1,6 @@
 {
   "name": "v-sk",
-  "version": "1.0.31",
+  "version": "1.0.34",
   "description": "基于 vue2、3 的骨架屏自动生成解决方案",
   "keywords": [
     "vue",
@@ -31,5 +31,8 @@
     "@rollup/plugin-commonjs": "^25.0.2",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "rollup": "^3.26.2"
+  },
+  "dependencies": {
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
